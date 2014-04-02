@@ -52,15 +52,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("<html>\r\n");
       out.write("<body>\r\n");
-      out.write("    <c:set var=\"contextPath\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("\"/>\r\n");
       out.write("    <h1>Pigsty</h1>\r\n");
       out.write("\t\t\r\n");
       out.write("\r\n");
       out.write("    <a href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("/pigsty/home/add\">Add new home</a><br/>\r\n");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/home/add\">Add new home</a><br/>\r\n");
       out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");

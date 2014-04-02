@@ -14,11 +14,15 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Repository;
 
 import com.marcmahoney.pigsty.model.Home;
 
 @Repository
+@Configuration
+@ComponentScan("com.marcmahoney.pigsty.init")
 public class HomeDAOImpl implements HomeDAO{
 
 	@Autowired

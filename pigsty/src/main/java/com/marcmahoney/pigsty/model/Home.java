@@ -11,13 +11,19 @@ package com.marcmahoney.pigsty.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "HOME")
+@Table(name = "homes")
 public class Home {
 
-	@Column(name="ADDRESS", nullable=false)
+	@Id
+	@GeneratedValue
+	private int id;
+	
+	@Column(name="address", nullable=false)
 	private String address;
 	
 	public Home(){
@@ -25,5 +31,9 @@ public class Home {
 	
 	public String getAddress(){
 		return address;
+	}
+	
+	public int getId(){
+		return id;
 	}
 }

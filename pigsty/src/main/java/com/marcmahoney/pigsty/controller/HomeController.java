@@ -12,6 +12,8 @@ package com.marcmahoney.pigsty.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +25,8 @@ import com.marcmahoney.pigsty.model.Home;
 import com.marcmahoney.pigsty.service.HomeService;
 
 @Controller
+@Configuration
+@ComponentScan("com.marcmahoney.pigsty.service")
 @RequestMapping(value="/home")
 public class HomeController {
 	
@@ -31,22 +35,22 @@ public class HomeController {
 	
 	@RequestMapping(value="/add", method=RequestMethod.GET)
 	public ModelAndView addHome() {
-		ModelAndView modelAndView = new ModelAndView("add-home");
+		ModelAndView modelAndView = new ModelAndView("add-home-form");
 		modelAndView.addObject("home", new Home());
-		System.out.println("at least I'm in th right place");
+		
 		return modelAndView;
 	}
 	
-//	@RequestMapping(value="/add", method=RequestMethod.POST)
-//	public ModelAndView addingHome(@ModelAttribute Home home) {
-//		ModelAndView modelAndView = new ModelAndView("home");
-//		homeService.addHome(home);
-//		
-//		String message = "Home was successfully added.";
-//		modelAndView.addObject("message", message);
-//		
-//		return modelAndView;
-//	}
+	@RequestMapping(value="/add", method=RequestMethod.POST)
+	public ModelAndView addingHome(@ModelAttribute Home home) {
+		ModelAndView modelAndView = new ModelAndView("home");
+		homeService.addHome(home);
+		
+		String message = "Home was successfully added.";
+		modelAndView.addObject("message", message);
+		
+		return modelAndView;
+	}
 	
 	@RequestMapping(value="/list")
 	public ModelAndView listOfHomes() {
