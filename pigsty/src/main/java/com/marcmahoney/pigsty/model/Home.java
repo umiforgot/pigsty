@@ -15,10 +15,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.apache.log4j.Logger;
+
 @Entity
 @Table(name = "homes")
 public class Home {
 
+	static final Logger logger = Logger.getLogger(Home.class);
 	@Id
 	@GeneratedValue
 	private int id;

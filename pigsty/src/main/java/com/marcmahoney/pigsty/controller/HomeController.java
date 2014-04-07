@@ -11,6 +11,7 @@ package com.marcmahoney.pigsty.controller;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +30,7 @@ import com.marcmahoney.pigsty.service.HomeService;
 @ComponentScan("com.marcmahoney.pigsty.service")
 @RequestMapping(value="/home")
 public class HomeController {
+	static final Logger logger = Logger.getLogger(HomeController.class);
 	
 	@Autowired
 	HomeService homeService;
@@ -37,7 +39,7 @@ public class HomeController {
 	public ModelAndView addHome() {
 		ModelAndView modelAndView = new ModelAndView("add-home-form");
 		modelAndView.addObject("home", new Home());
-		
+		logger.debug("\n\n\n\n at least in the right place\n\n\n\n");
 		return modelAndView;
 	}
 	
