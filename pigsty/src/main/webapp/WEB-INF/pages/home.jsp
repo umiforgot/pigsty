@@ -8,11 +8,11 @@
     <h1>Home page</h1>
     <p>
     ${message}<br/>
-    <a href="${pageContext.request.contextPath}/team/add.html">Add new team</a><br/>
-    <a href="${pageContext.request.contextPath}/team/list.html">Team list</a><br/>
+    <a href="${pageContext.request.contextPath}/home/add.html">Add new home</a><br/>
+    <a href="${pageContext.request.contextPath}/home/list.html">home list</a><br/>
     </p>
     
-    <form:form method="POST" commandName="team" action="${pageContext.request.contextPath}/team/add.html">
+    <form:form method="POST" commandName="home" action="${pageContext.request.contextPath}/home/add.html">
         <table>
         <tbody>
             <tr>
