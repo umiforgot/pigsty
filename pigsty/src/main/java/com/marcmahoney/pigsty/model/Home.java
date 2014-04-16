@@ -15,28 +15,30 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.apache.log4j.Logger;
-
 @Entity
 @Table(name = "homes")
 public class Home {
 
-	static final Logger logger = Logger.getLogger(Home.class);
 	@Id
 	@GeneratedValue
 	private int id;
 	
-	@Column(name="address", nullable=false)
+	@Column(name="address")
 	private String address;
-	
-	public Home(){
-	}
 	
 	public String getAddress(){
 		return address;
 	}
 	
+	public void setAddress(String address){
+		this.address = address;
+	}
+	
 	public int getId(){
 		return id;
+	}
+	
+	public void setId(int id){
+		this.id = id;
 	}
 }
