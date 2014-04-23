@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.marcmahoney.pigsty.model.Home;
+import com.marcmahoney.pigsty.model.Roommate;
 import com.marcmahoney.pigsty.service.HomeService;
 
 @Controller
@@ -91,6 +92,16 @@ public class HomeController {
 		homeService.deleteHome(id);
 		String message = "Home was successfully deleted.";
 		modelAndView.addObject("message", message);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/list/roommates", method=RequestMethod.GET)
+	public ModelAndView listOfRommates(@PathVariable String address){
+		ModelAndView modelAndView = new ModelAndView("list-of-roommates");
+		
+		List<Roommate> roommates = homeService.getRoommates(address);
+		modelAndView.addObject("roommates", roommates);
+		
 		return modelAndView;
 	}
 }

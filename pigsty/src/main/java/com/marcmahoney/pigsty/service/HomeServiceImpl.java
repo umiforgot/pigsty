@@ -53,9 +53,4 @@ public class HomeServiceImpl implements HomeService{
 	public List<Roommate> getRoommates(String address){
 		return homeDAO.getRoommates(address);
 	}
-
-
-	
-	
-	
 }
