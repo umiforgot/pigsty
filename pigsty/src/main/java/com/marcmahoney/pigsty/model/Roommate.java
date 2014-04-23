@@ -20,9 +20,9 @@ public class Roommate {
 
 	@Id
 	@GeneratedValue
-	private int id;
+	private int id, homeId;
 	
-	private String lastName, firstName, homeAddress;
+	private String lastName, firstName;
 	
 	public int getId(){
 		return id;
@@ -44,11 +44,11 @@ public class Roommate {
 		firstName = first;
 	}
 	
-	public String getHomeAddress(){
-		return homeAddress;
+	public int getHomeId(){
+		return homeId;
 	}
 	
-	public void setHomeAddress(String newAddress){
-		homeAddress = newAddress;
+	public void setHomeId(int newId){
+		homeId = newId;
 	}
 }

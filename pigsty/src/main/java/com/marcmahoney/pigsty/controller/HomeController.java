@@ -95,11 +95,11 @@ public class HomeController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/list/roommates", method=RequestMethod.GET)
-	public ModelAndView listOfRommates(@PathVariable String address){
+	@RequestMapping(value = "/{houseId}/roommates", method = RequestMethod.GET)
+	public ModelAndView listOfRommates(@PathVariable int homeId){
 		ModelAndView modelAndView = new ModelAndView("list-of-roommates");
 		
-		List<Roommate> roommates = homeService.getRoommates(address);
+		List<Roommate> roommates = homeService.getRoommates(homeId);
 		modelAndView.addObject("roommates", roommates);
 		
 		return modelAndView;

@@ -50,7 +50,7 @@ public class HomeServiceImpl implements HomeService{
 		return homeDAO.getHomes();
 	}
 	
-	public List<Roommate> getRoommates(String address){
-		return homeDAO.getRoommates(address);
+	public List<Roommate> getRoommates(int homeId){
+		return homeDAO.getRoommates(homeId);
 	}
 }

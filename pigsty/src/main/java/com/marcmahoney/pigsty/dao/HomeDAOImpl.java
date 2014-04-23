@@ -61,9 +61,9 @@ public class HomeDAOImpl implements HomeDAO{
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Roommate> getRoommates(String address) {
-		Query query = getCurrentSession().createQuery("from Roommate where homeAddress = :address");
-		query.setParameter("address", address);
+	public List<Roommate> getRoommates(int homeId) {
+		Query query = getCurrentSession().createQuery("from Roommate where homeId = :homeId");
+		query.setParameter("homeId", homeId);
 		return query.list();
 		
 	}

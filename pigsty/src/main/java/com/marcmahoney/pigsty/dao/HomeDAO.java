@@ -21,5 +21,5 @@ public interface HomeDAO {
 	public Home getHome(int id);
 	public void deleteHome(int id);
 	public List<Home> getHomes();
-	public List<Roommate> getRoommates(String address);
+	public List<Roommate> getRoommates(int id);
 }

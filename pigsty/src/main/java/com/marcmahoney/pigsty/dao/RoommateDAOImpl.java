@@ -41,7 +41,7 @@ public class RoommateDAOImpl implements RoommateDAO{
 		
 		roommateToUpdate.setFirstName(roommate.getFirstName());
 		roommateToUpdate.setLastName(roommate.getLastName());
-		roommateToUpdate.setHomeAddress(roommate.getHomeAddress());
+		roommateToUpdate.setHomeId(roommate.getHomeId());
 		
 		getCurrentSession().update(roommateToUpdate);		
 	}
