@@ -26,9 +26,7 @@
     
         <br>
 		<p>Here you can see the list of the homes, edit them, remove or update.</p>
-        
-        <br><h1>num of homes: ${homes.size()}</h1><br>
-		
+		<br>
         <table border="1px" cellpadding="0" cellspacing="0" >
 			<thead>
 				<tr>

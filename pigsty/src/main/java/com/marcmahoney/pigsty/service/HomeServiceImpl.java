@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.marcmahoney.pigsty.dao.HomeDAO;
 import com.marcmahoney.pigsty.model.Home;
+import com.marcmahoney.pigsty.model.Roommate;
 
 @Service
 @Transactional
@@ -47,6 +48,10 @@ public class HomeServiceImpl implements HomeService{
 
 	public List<Home> getHomes() {
 		return homeDAO.getHomes();
+	}
+	
+	public List<Roommate> getRoommates(String address){
+		return homeDAO.getRoommates(address);
 	}
 
 

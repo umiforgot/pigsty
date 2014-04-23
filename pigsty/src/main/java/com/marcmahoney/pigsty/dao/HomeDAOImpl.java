@@ -11,6 +11,7 @@ package com.marcmahoney.pigsty.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Repository;
 
 import com.marcmahoney.pigsty.model.Home;
+import com.marcmahoney.pigsty.model.Roommate;
 
 @Repository
 @Configuration
@@ -50,12 +52,19 @@ public class HomeDAOImpl implements HomeDAO{
 
 	public void deleteHome(int id) {
 		Home home = getHome(id);
-		if (home != null)
-				getCurrentSession().delete(home);
+		if (home != null) getCurrentSession().delete(home);
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Home> getHomes() {
 		return getCurrentSession().createQuery("from Home").list();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Roommate> getRoommates(String address) {
+		Query query = getCurrentSession().createQuery("from Roommate where homeAddress = :address");
+		query.setParameter("address", address);
+		return query.list();
+		
 	}
 }
