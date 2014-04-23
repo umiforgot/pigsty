@@ -95,7 +95,7 @@ public class HomeController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/{houseId}/roommates", method = RequestMethod.GET)
+	@RequestMapping(value = "/{homeId}/roommates", method = RequestMethod.GET)
 	public ModelAndView listOfRommates(@PathVariable int homeId){
 		ModelAndView modelAndView = new ModelAndView("list-of-roommates");
 		

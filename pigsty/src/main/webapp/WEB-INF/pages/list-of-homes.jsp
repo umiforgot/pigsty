@@ -37,7 +37,7 @@
 			<tbody>
 				<c:forEach var="home" items="${homes}">
 				<tr>
-					<td><a href="${pageContext.request.contextPath}/home/${home.id}/roommates">${home.address}</a></td>
+					<td><a href="${pageContext.request.contextPath}/home/${home.id}/roommates.html">${home.address}</a></td>
 					<td>
                         <a href="${pageContext.request.contextPath}/home/edit/${home.id}.html">Edit</a><br/>
                         <a href="${pageContext.request.contextPath}/home/delete/${home.id}.html">Delete</a><br/>

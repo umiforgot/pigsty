@@ -9,6 +9,8 @@
  */
 package com.marcmahoney.pigsty.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,7 +18,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "roommates")
-public class Roommate {
+public class Roommate implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5058971458490407739L;
 
 	@Id
 	@GeneratedValue

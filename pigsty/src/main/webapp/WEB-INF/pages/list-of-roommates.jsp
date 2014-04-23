@@ -26,6 +26,19 @@
     
         <br>
         
-        <c:forEach var="roommate" items="${roommates}">
-            ${roommate.lastName}, ${roommate.firstName}
-        </c:forEach>
+         <table border="1px" cellpadding="0" cellspacing="0" >
+			<thead>
+				<tr>
+					<th width="15%">Last Name</th>  <th width="15%">First Name</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+                <c:forEach var="roommate" items="${roommates}">
+                    <tr>
+                        <td>${roommate.lastName}</td> <td>${roommate.firstName}</td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+                
