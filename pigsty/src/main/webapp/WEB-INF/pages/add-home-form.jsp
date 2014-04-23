@@ -9,9 +9,23 @@
 <html>
 <head>
 <title>Add home page</title>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+        rel="stylesheet"  type="text/css" />
 </head>
 <body>
-    <h1>Add your home</h1>
+    <h1>Pigsty</h1>
+    <ul class="nav nav-tabs">
+      <li><a href="${pageContext.request.contextPath}/index.html">Home</a></li>
+      <li class="active"><a href="${pageContext.request.contextPath}/home/add.html">
+        Add your home!</a></li>
+      <li><a href="${pageContext.request.contextPath}/home/list.html">
+        Home List</a></li>
+    </ul>
+    
+    <br>
+    <h3>Add your home</h3>
+    <br>
+    
     <form:form method="POST" commandName="home" action="${pageContext.request.contextPath}/home/add.html">
         <table>
             <tbody>
@@ -27,6 +41,5 @@
         </table>
     </form:form>
 
-    <p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
 </body>
 </html>

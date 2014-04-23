@@ -16,12 +16,6 @@
       <li><a href="${pageContext.request.contextPath}/home/list.html">
         Home List</a></li>
     </ul>
-
-    <p>
-        ${message}<br/><br><br>
-        <a href="${pageContext.request.contextPath}/home/add.html">Add new home</a><br/>
-        <a href="${pageContext.request.contextPath}/home/list.html">home list</a><br/>
-    </p>
     
 
 </body>

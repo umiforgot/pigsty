@@ -37,18 +37,19 @@ public class HomeDAOImpl implements HomeDAO{
 	}
 
 	public void updateHome(Home home) {
-		Home homeToUpdate = getHome(home.getAddress());
+		Home homeToUpdate = getHome(home.getId());
+		homeToUpdate.setAddress(home.getAddress());
 		getCurrentSession().update(homeToUpdate);
 		
 	}
 
-	public Home getHome(String address) {
-		Home home = (Home) getCurrentSession().get(Home.class, address);
+	public Home getHome(int id) {
+		Home home = (Home) getCurrentSession().get(Home.class, id);
 		return home;
 	}
 
-	public void deleteHome(String address) {
-		Home home = getHome(address);
+	public void deleteHome(int id) {
+		Home home = getHome(id);
 		if (home != null)
 				getCurrentSession().delete(home);
 	}

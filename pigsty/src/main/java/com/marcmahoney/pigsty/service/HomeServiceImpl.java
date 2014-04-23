@@ -37,12 +37,12 @@ public class HomeServiceImpl implements HomeService{
 		homeDAO.updateHome(home);
 	}
 
-	public Home getHome(String address) {
-		return homeDAO.getHome(address);
+	public Home getHome(int id) {
+		return homeDAO.getHome(id);
 	}
 
-	public void deleteHome(String address) {
-		homeDAO.deleteHome(address);
+	public void deleteHome(int id) {
+		homeDAO.deleteHome(id);
 	}
 
 	public List<Home> getHomes() {

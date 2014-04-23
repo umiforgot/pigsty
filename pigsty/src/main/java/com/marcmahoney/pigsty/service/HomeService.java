@@ -17,7 +17,7 @@ public interface HomeService {
 	
 	public void addHome(Home home);
 	public void updateHome(Home home);
-	public Home getHome(String address);
-	public void deleteHome(String address);
+	public Home getHome(int id);
+	public void deleteHome(int id);
 	public List<Home> getHomes();
 }

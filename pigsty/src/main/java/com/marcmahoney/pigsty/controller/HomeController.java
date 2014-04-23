@@ -65,9 +65,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/edit/address", method=RequestMethod.GET)
-	public ModelAndView editHomePage(@PathVariable String address) {
+	public ModelAndView editHomePage(@PathVariable int id) {
 		ModelAndView modelAndView = new ModelAndView("edit-home-form");
-		Home home = homeService.getHome(address);
+		Home home = homeService.getHome(id);
 		modelAndView.addObject("home",home);
 		return modelAndView;
 	}
@@ -86,9 +86,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/delete/address", method=RequestMethod.GET)
-	public ModelAndView deleteHome(@PathVariable String address) {
+	public ModelAndView deleteHome(@PathVariable int id) {
 		ModelAndView modelAndView = new ModelAndView("home");
-		homeService.deleteHome(address);
+		homeService.deleteHome(id);
 		String message = "Home was successfully deleted.";
 		modelAndView.addObject("message", message);
 		return modelAndView;

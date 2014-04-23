@@ -9,7 +9,6 @@
  */
 package com.marcmahoney.pigsty.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -23,7 +22,6 @@ public class Home {
 	@GeneratedValue
 	private int id;
 	
-	@Column(name="address")
 	private String address;
 	
 	public String getAddress(){
@@ -38,7 +36,5 @@ public class Home {
 		return id;
 	}
 	
-	public void setId(int id){
-		this.id = id;
-	}
+
 }
