@@ -23,22 +23,15 @@
             <li class="active"><a href="${pageContext.request.contextPath}/home/list.html">
                 Home List</a></li>
         </ul>
-    
-        <br>
         
-         <table border="1px" cellpadding="0" cellspacing="0" >
-			<thead>
-				<tr>
-					<th width="15%">Last Name</th>  <th width="15%">First Name</th>
-				</tr>
-			</thead>
-			
-			<tbody>
-                <c:forEach var="roommate" items="${roommates}">
-                    <tr>
-                        <td>${roommate.lastName}</td> <td>${roommate.firstName}</td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+        
+        <br>
+
+        <ul class="list-groups">
+            <c:forEach var="roommate" items="${roommates}">
+                <li class="list-group-item">${roommate.firstName} ${roommate.lastName}</li>
+            </c:forEach>
+        </ul>
+                
+        
                 

@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.marcmahoney.pigsty.model.Chore;
 import com.marcmahoney.pigsty.model.Home;
 import com.marcmahoney.pigsty.model.Roommate;
 import com.marcmahoney.pigsty.service.HomeService;
@@ -40,7 +41,7 @@ public class HomeController {
 	public ModelAndView addHome() {
 		ModelAndView modelAndView = new ModelAndView("add-home-form");
 		modelAndView.addObject("home", new Home());
-		logger.debug("\n\n\n\n at least in the right place\n\n\n\n");
+		
 		return modelAndView;
 	}
 	
@@ -65,36 +66,6 @@ public class HomeController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/edit/address", method=RequestMethod.GET)
-	public ModelAndView editHomePage(@PathVariable int id) {
-		ModelAndView modelAndView = new ModelAndView("edit-home-form");
-		Home home = homeService.getHome(id);
-		modelAndView.addObject("home",home);
-		return modelAndView;
-	}
-	
-	@RequestMapping(value="/edit/address", method=RequestMethod.POST)
-	public ModelAndView edditingHome(@ModelAttribute Home home, @PathVariable Integer id) {
-		
-		ModelAndView modelAndView = new ModelAndView("home");
-		
-		homeService.updateHome(home);
-		
-		String message = "Home was successfully edited.";
-		modelAndView.addObject("message", message);
-		
-		return modelAndView;
-	}
-	
-	@RequestMapping(value="/delete/address", method=RequestMethod.GET)
-	public ModelAndView deleteHome(@PathVariable int id) {
-		ModelAndView modelAndView = new ModelAndView("home");
-		homeService.deleteHome(id);
-		String message = "Home was successfully deleted.";
-		modelAndView.addObject("message", message);
-		return modelAndView;
-	}
-	
 	@RequestMapping(value = "/{homeId}/roommates", method = RequestMethod.GET)
 	public ModelAndView listOfRommates(@PathVariable int homeId){
 		ModelAndView modelAndView = new ModelAndView("list-of-roommates");
@@ -102,6 +73,41 @@ public class HomeController {
 		List<Roommate> roommates = homeService.getRoommates(homeId);
 		modelAndView.addObject("roommates", roommates);
 		
+//		List<Chore> chores = choreService.getChores(roommateId);
+//		modelAndView.addObject("chores", chores);
+//		
 		return modelAndView;
 	}
+	
+//	@RequestMapping(value="/edit/address", method=RequestMethod.GET)
+//	public ModelAndView editHomePage(@PathVariable int id) {
+//		ModelAndView modelAndView = new ModelAndView("edit-home-form");
+//		Home home = homeService.getHome(id);
+//		modelAndView.addObject("home",home);
+//		return modelAndView;
+//	}
+//	
+//	@RequestMapping(value="/edit/address", method=RequestMethod.POST)
+//	public ModelAndView edditingHome(@ModelAttribute Home home, @PathVariable Integer id) {
+//		
+//		ModelAndView modelAndView = new ModelAndView("home");
+//		
+//		homeService.updateHome(home);
+//		
+//		String message = "Home was successfully edited.";
+//		modelAndView.addObject("message", message);
+//		
+//		return modelAndView;
+//	}
+//	
+//	@RequestMapping(value="/delete/address", method=RequestMethod.GET)
+//	public ModelAndView deleteHome(@PathVariable int id) {
+//		ModelAndView modelAndView = new ModelAndView("home");
+//		homeService.deleteHome(id);
+//		String message = "Home was successfully deleted.";
+//		modelAndView.addObject("message", message);
+//		return modelAndView;
+//	}
+	
+	
 }
