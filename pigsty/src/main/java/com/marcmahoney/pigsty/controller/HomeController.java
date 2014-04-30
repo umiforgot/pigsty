@@ -25,6 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.marcmahoney.pigsty.model.Chore;
 import com.marcmahoney.pigsty.model.Home;
 import com.marcmahoney.pigsty.model.Roommate;
+import com.marcmahoney.pigsty.service.ChoreService;
 import com.marcmahoney.pigsty.service.HomeService;
 
 @Controller
@@ -32,10 +33,11 @@ import com.marcmahoney.pigsty.service.HomeService;
 @ComponentScan("com.marcmahoney.pigsty.service")
 @RequestMapping(value="/home")
 public class HomeController {
-	static final Logger logger = Logger.getLogger(HomeController.class);
-	
 	@Autowired
 	HomeService homeService;
+	
+	@Autowired
+	ChoreService choreService;
 	
 	@RequestMapping(value="/add", method=RequestMethod.GET)
 	public ModelAndView addHome() {
@@ -73,11 +75,19 @@ public class HomeController {
 		List<Roommate> roommates = homeService.getRoommates(homeId);
 		modelAndView.addObject("roommates", roommates);
 		
-//		List<Chore> chores = choreService.getChores(roommateId);
-//		modelAndView.addObject("chores", chores);
-//		
 		return modelAndView;
 	}
+	
+	@RequestMapping(value = "/{roommateId}/chores", method = RequestMethod.GET)
+	public ModelAndView listOfChores(@PathVariable int roommateId){
+		ModelAndView modelAndView = new ModelAndView("list-of-chores");
+		
+		List<Chore> chores = choreService.getChores(roommateId);
+		modelAndView.addObject("chores", chores);
+		
+		return modelAndView;
+	}
+	
 	
 //	@RequestMapping(value="/edit/address", method=RequestMethod.GET)
 //	public ModelAndView editHomePage(@PathVariable int id) {

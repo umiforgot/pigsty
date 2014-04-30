@@ -20,9 +20,7 @@ import javax.persistence.Table;
 @Table(name = "roommates")
 public class Roommate implements Serializable{
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 5058971458490407739L;
 
 	@Id

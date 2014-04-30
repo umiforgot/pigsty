@@ -49,7 +49,8 @@ public class ChoreDAOImpl implements ChoreDAO {
 
 	@SuppressWarnings("unchecked")
 	public List<Chore> getChores(int roommateId) {
-		Query query = getCurrentSession().createQuery("from Chore where idOfRoommateAssigned = :roommateId");
+		Query query = getCurrentSession().createQuery(
+				"from Chore where idOfRoommateAssigned = :roommateId");
 		query.setParameter("roommateId", roommateId);
 		return query.list();
 	}

@@ -1,4 +1,5 @@
 /**
+
  * pigsty
  * ChoreServiceImpl.java
  *
@@ -12,10 +13,18 @@ package com.marcmahoney.pigsty.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.marcmahoney.pigsty.dao.ChoreDAO;
 import com.marcmahoney.pigsty.model.Chore;
 
+@Service
+@Transactional
+@Configuration
+@ComponentScan("com.marcmahoney.pigsty.dao")
 public class ChoreServiceImpl implements ChoreService {
 
 	@Autowired

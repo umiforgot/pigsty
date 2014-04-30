@@ -65,6 +65,5 @@ public class HomeDAOImpl implements HomeDAO{
 		Query query = getCurrentSession().createQuery("from Roommate where homeId = :homeId");
 		query.setParameter("homeId", homeId);
 		return query.list();
-		
 	}
 }

@@ -28,8 +28,8 @@
         <br>
 
         <ul class="list-groups">
-            <c:forEach var="roommate" items="${roommates}">
-                <li class="list-group-item"><a href="${pageContext.request.contextPath}/home/${roommate.id}/chores.html">${roommate.firstName} ${roommate.lastName}</a></li>
+            <c:forEach var="chore" items="${chores}">
+                <li class="list-group-item">${chore.description}</a></li>
             </c:forEach>
         </ul>
                 

@@ -30,7 +30,7 @@
         <table border="1px" cellpadding="0" cellspacing="0" >
 			<thead>
 				<tr>
-					<th width="15%">Address</th>  <th width="10%">action</th>
+					<th width="15%">Address</th>
 				</tr>
 			</thead>
 			
@@ -38,10 +38,6 @@
 				<c:forEach var="home" items="${homes}">
 				<tr>
 					<td><a href="${pageContext.request.contextPath}/home/${home.id}/roommates.html">${home.address}</a></td>
-					<td>
-                        <a href="${pageContext.request.contextPath}/home/edit/${home.id}.html">Edit</a><br/>
-                        <a href="${pageContext.request.contextPath}/home/delete/${home.id}.html">Delete</a><br/>
-					</td>
 				</tr>
 				</c:forEach>
 			</tbody>
